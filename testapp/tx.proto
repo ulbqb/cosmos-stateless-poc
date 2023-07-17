@@ -1,0 +1,36 @@
+syntax = "proto3";
+package testapp;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/ulbqb/cosmos-stateless-poc/testapp";
+
+// Msg tests the Protobuf message service as defined in
+// https://github.com/cosmos/cosmos-sdk/issues/7500.
+service Msg {
+  rpc Get(MsgGet) returns (MsgGetResponse);
+  rpc Set(MsgSet) returns (MsgSetResponse);
+  rpc Remove(MsgRemove) returns (MsgRemoveResponse);
+}
+
+message MsgGet {
+  bytes key = 1;
+}
+
+message MsgGetResponse {
+}
+
+message MsgSet {
+  bytes key = 1;
+  bytes value = 2;
+}
+
+message MsgSetResponse {
+}
+
+message MsgRemove {
+  bytes key = 1;
+}
+
+message MsgRemoveResponse {
+}
