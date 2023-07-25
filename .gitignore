@@ -18,4 +18,10 @@
 # vendor/
 
 # Go workspace file
-go.work
+# go.work
+
+# Mac file
+.DS_Store
+
+# Temporary directories
+tmp
